@@ -1,16 +1,15 @@
-## Hi there 👋
+# ¡Hola! Soy Joaquín 👋
 
-<!--
-**Joaquin-Inzunza/Joaquin-Inzunza** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Ingeniero en Informático (INACAP, 2025), de San Pedro de la Paz, Chile.
+Me apasiona el análisis de datos y las bases de datos — disfruto convertir
+datos crudos en decisiones concretas.
 
-Here are some ideas to get you started:
+## 🔧 Stack
+- **Lenguajes:** Python, R, SQL
+- **Datos:** Pandas, Power BI, ggplot2/tidyr/dplyr
+- **Bases de datos:** PostgreSQL, MySQL
+- **Otros:** Detección de objetos (YOLO), Git
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 📫 Contacto
+- LinkedIn: [linkedin.com/in/joaquín-inzunza](https://www.linkedin.com/in/joaqu%C3%ADn-inzunza/)
+- Correo: joaquininzunzanovoa4@gmail.com
