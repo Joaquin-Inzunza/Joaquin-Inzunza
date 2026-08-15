@@ -36,6 +36,41 @@
     *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
   }
 
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal{
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-group .reveal:nth-child(1){ transition-delay: 0s; }
+  .reveal-group .reveal:nth-child(2){ transition-delay: 0.08s; }
+  .reveal-group .reveal:nth-child(3){ transition-delay: 0.16s; }
+  .reveal-group .reveal:nth-child(4){ transition-delay: 0.24s; }
+  .reveal-group .reveal:nth-child(5){ transition-delay: 0.32s; }
+  .reveal-group .reveal:nth-child(6){ transition-delay: 0.4s; }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ---------- AMBIENT BACKGROUND GLOW ---------- */
+  .bg-glow{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(560px circle at 50% 0%, rgba(255,255,255,0.05), transparent 70%);
+    transition: background-position 0.2s ease-out;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .bg-glow{ display: none; }
+  }
+
   body{
     background: var(--bg);
     color: var(--ink);
@@ -399,6 +434,7 @@
 </style>
 </head>
 <body>
+<div class="bg-glow" id="bgGlow"></div>
 
 <header class="nav">
   <div class="nav-inner">
@@ -419,12 +455,12 @@
     <h1>Joaquín Inzunza Novoa</h1>
     <div class="role">Ingeniero en Informática — Análisis de Datos &amp; Bases de Datos</div>
     <p class="lede">Convierto datos crudos en respuestas concretas. SQL, Python y Power BI son mis instrumentos de trabajo — me interesa lo que pasa entre la tabla y la decisión.</p>
-    <div class="hero-cta">
+    <div class="hero-cta reveal">
       <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
       <a class="btn btn-ghost" href="#contacto">Contactarme</a>
     </div>
 
-    <div class="titleblock">
+    <div class="titleblock reveal">
       <div class="titleblock-grid">
         <div class="tb-cell">
           <div class="tb-label">Nombre</div>
@@ -449,7 +485,7 @@
   <section id="perfil">
     <div class="sheet-label">Lámina 01 — Perfil</div>
     <h2 class="section-title">Sobre mí</h2>
-    <p class="about-text">
+    <p class="about-text reveal">
       Titulado como <strong>Ingeniero en Informática en INACAP</strong> (abril de 2025).
       Mi interés está en el <strong>análisis de datos y el diseño de bases de datos</strong>:
       me gusta entender qué pregunta hay detrás de una tabla y responderla con una consulta
@@ -466,24 +502,24 @@
   <section id="stack">
     <div class="sheet-label">Lámina 02 — Stack</div>
     <h2 class="section-title">Herramientas</h2>
-    <div class="stack-grid">
-      <div class="stack-group">
+    <div class="stack-grid reveal-group">
+      <div class="stack-group reveal">
         <h3>Lenguajes</h3>
         <div class="stack-items"><span>SQL</span><span>Python</span><span>R</span></div>
       </div>
-      <div class="stack-group">
+      <div class="stack-group reveal">
         <h3>Análisis</h3>
         <div class="stack-items"><span>Pandas</span><span>dplyr</span><span>tidyr</span></div>
       </div>
-      <div class="stack-group">
+      <div class="stack-group reveal">
         <h3>Visualización</h3>
         <div class="stack-items"><span>Power BI</span><span>Matplotlib</span><span>ggplot2</span></div>
       </div>
-      <div class="stack-group">
+      <div class="stack-group reveal">
         <h3>Bases de datos</h3>
         <div class="stack-items"><span>PostgreSQL</span><span>MySQL</span></div>
       </div>
-      <div class="stack-group">
+      <div class="stack-group reveal">
         <h3>Otros</h3>
         <div class="stack-items"><span>YOLO / LabelMe</span><span>Git</span></div>
       </div>
@@ -493,9 +529,9 @@
   <section id="proyectos">
     <div class="sheet-label">Lámina 03 — Proyectos</div>
     <h2 class="section-title">Proyectos</h2>
-    <div class="project-grid">
+    <div class="project-grid reveal-group">
 
-      <div class="project-card">
+      <div class="project-card reveal">
         <div class="project-head">
           <div class="project-title">Pistons Speed — Sitio web</div>
           <span class="tag tag-ok">Completado</span>
@@ -507,7 +543,7 @@
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal">
         <div class="project-head">
           <div class="project-title">Análisis de datos públicos de Chile</div>
           <span class="tag tag-progress">En desarrollo</span>
@@ -516,7 +552,7 @@
         <div class="project-fields"><span>Stack:</span> PostgreSQL · Python · Power BI</div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal">
         <div class="project-head">
           <div class="project-title">Sistema POS — almacén de barrio</div>
           <span class="tag tag-progress">En desarrollo</span>
@@ -525,7 +561,7 @@
         <div class="project-fields"><span>Stack:</span> Base de datos · Gestión de inventario</div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal">
         <div class="project-head">
           <div class="project-title">Dashboard de KPIs</div>
           <span class="tag tag-ok">Completado</span>
@@ -534,7 +570,7 @@
         <div class="project-fields"><span>Stack:</span> Power BI</div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal">
         <div class="project-head">
           <div class="project-title">Comportamiento de usuarios — Netflix</div>
           <span class="tag tag-ok">Completado</span>
@@ -543,7 +579,7 @@
         <div class="project-fields"><span>Stack:</span> R · ggplot2 · dplyr · tidyr</div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal">
         <div class="project-head">
           <div class="project-title">Detección de mascarillas</div>
           <span class="tag tag-ok">Completado</span>
@@ -552,7 +588,7 @@
         <div class="project-fields"><span>Stack:</span> YOLO · LabelMe</div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal">
         <div class="project-head">
           <div class="project-title">Análisis exploratorio — Titanic</div>
           <span class="tag tag-ok">Completado</span>
@@ -567,16 +603,16 @@
   <section id="contacto" style="border-bottom:none;">
     <div class="sheet-label">Lámina 04 — Contacto</div>
     <h2 class="section-title">Hablemos</h2>
-    <div class="contact-grid">
-      <a class="contact-card" href="mailto:joaquininzunzanovoa4@gmail.com">
+    <div class="contact-grid reveal-group">
+      <a class="contact-card reveal" href="mailto:joaquininzunzanovoa4@gmail.com">
         <div class="contact-label">Correo</div>
         <div class="contact-value">joaquininzunzanovoa4@gmail.com</div>
       </a>
-      <a class="contact-card" href="https://www.linkedin.com/in/joaqu%C3%ADn-inzunza/" target="_blank" rel="noopener">
+      <a class="contact-card reveal" href="https://www.linkedin.com/in/joaqu%C3%ADn-inzunza/" target="_blank" rel="noopener">
         <div class="contact-label">LinkedIn</div>
         <div class="contact-value">in/joaquín-inzunza</div>
       </a>
-      <a class="contact-card" href="https://github.com/TU-USUARIO" target="_blank" rel="noopener">
+      <a class="contact-card reveal" href="https://github.com/TU-USUARIO" target="_blank" rel="noopener">
         <div class="contact-label">GitHub</div>
         <div class="contact-value">https://github.com/Joaquin-Inzunza</div>
       </a>
@@ -592,5 +628,32 @@
   </div>
 </footer>
 
+<script>
+  // Reveal elements as they enter the viewport
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Ambient background glow drifts gently with scroll
+  const glow = document.getElementById('bgGlow');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking){
+      requestAnimationFrame(() => {
+        const y = window.scrollY * 0.15;
+        glow.style.transform = `translateY(${y}px)`;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+</script>
 </body>
 </html>
