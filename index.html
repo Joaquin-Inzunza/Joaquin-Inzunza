@@ -282,6 +282,49 @@
     color: var(--ink-dim);
   }
 
+  /* timeline */
+  .timeline{
+    max-width: 640px;
+    border-left: 1px solid var(--border);
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .timeline-item{
+    position: relative;
+  }
+  .timeline-item::before{
+    content: '';
+    position: absolute;
+    left: -29px;
+    top: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--border);
+  }
+  .timeline-date{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 4px;
+  }
+  .timeline-title{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+  .timeline-org{
+    color: var(--ink-dim);
+    font-size: 0.92rem;
+    margin-top: 2px;
+  }
+
   /* stack */
   .stack-grid{
     display: grid;
@@ -441,6 +484,7 @@
     <div class="nav-mark"><strong>J. INZUNZA</strong> — LÁMINA DE PERFIL</div>
     <ul class="nav-links">
       <li><a href="#perfil">Perfil</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
       <li><a href="#stack">Stack</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#contacto">Contacto</a></li>
@@ -499,8 +543,43 @@
     </div>
   </section>
 
+  <section id="experiencia">
+    <div class="sheet-label">Lámina 02 — Trayectoria</div>
+    <h2 class="section-title">Experiencia</h2>
+    <div class="timeline reveal-group">
+      <div class="timeline-item reveal">
+        <div class="timeline-date">2024</div>
+        <div class="timeline-body">
+          <div class="timeline-title">Guardia de seguridad · Operador CCTV</div>
+          <div class="timeline-org">Valmar — trabajo recurrente</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-date">2024</div>
+        <div class="timeline-body">
+          <div class="timeline-title">Práctica profesional — Soporte TI</div>
+          <div class="timeline-org">Constructora LD, Osorno</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Abril 2025</div>
+        <div class="timeline-body">
+          <div class="timeline-title">Título Ingeniero en Informática</div>
+          <div class="timeline-org">INACAP</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-date">2025</div>
+        <div class="timeline-body">
+          <div class="timeline-title">Encargado de Bodega</div>
+          <div class="timeline-org">Constructora LD, Osorno</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="stack">
-    <div class="sheet-label">Lámina 02 — Stack</div>
+    <div class="sheet-label">Lámina 03 — Stack</div>
     <h2 class="section-title">Herramientas</h2>
     <div class="stack-grid reveal-group">
       <div class="stack-group reveal">
@@ -527,16 +606,16 @@
   </section>
 
   <section id="proyectos">
-    <div class="sheet-label">Lámina 03 — Proyectos</div>
+    <div class="sheet-label">Lámina 04 — Proyectos</div>
     <h2 class="section-title">Proyectos</h2>
     <div class="project-grid reveal-group">
 
       <div class="project-card reveal">
         <div class="project-head">
-          <div class="project-title">Pistons Speed — Sitio web</div>
+          <div class="project-title">Pistons Speed — Sitio web comercial</div>
           <span class="tag tag-ok">Completado</span>
         </div>
-        <p class="project-desc">Sitio web para un taller mecánico especializado en motos, con identidad de marca a medida, diseño responsive y datos estructurados para SEO local.</p>
+        <p class="project-desc">Desarrollo de sitio web responsive para un taller especializado en motocicletas, orientado a presencia digital, captación de clientes y contacto directo. Implementé la interfaz, estructura de servicios, integración con WhatsApp, Instagram y ubicación, además de optimización para dispositivos móviles y SEO local.</p>
         <div class="project-fields">
           <span>Stack:</span> HTML · CSS · JavaScript ·
           <a href="https://joaquin-inzunza.github.io/pistons-speed/" target="_blank" rel="noopener">Ver sitio ↗</a>
@@ -601,7 +680,7 @@
   </section>
 
   <section id="contacto" style="border-bottom:none;">
-    <div class="sheet-label">Lámina 04 — Contacto</div>
+    <div class="sheet-label">Lámina 05 — Contacto</div>
     <h2 class="section-title">Hablemos</h2>
     <div class="contact-grid reveal-group">
       <a class="contact-card reveal" href="mailto:joaquininzunzanovoa4@gmail.com">
@@ -624,7 +703,7 @@
 <footer class="wrap">
   <div class="footer-inner">
     <span>Concepción, Chile</span>
-    <span>Lámina 05/05 · Actualizado 2026</span>
+    <span>Lámina 06/06 · Actualizado 2026</span>
   </div>
 </footer>
 
